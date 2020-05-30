@@ -1,7 +1,7 @@
 import Two from 'two.js';
 
 // Make an instance of two and place it on the page.
-var elem = document.getElementById('draw-shapes');
+var elem = document.body
 var params = { width: 285, height: 200 };
 var two = new Two(params).appendTo(elem);
 

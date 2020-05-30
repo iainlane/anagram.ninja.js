@@ -105,5 +105,5 @@ typings/
 # Yarn lock file
 yarn.lock
 
-# Webpack generated js file
-dist/main.js
+# Webpack puts its output here now
+dist
