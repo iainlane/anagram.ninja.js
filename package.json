@@ -1,0 +1,16 @@
+{
+  "name": "anagram",
+  "version": "0.0.1",
+  "description": "Make a nice animation to help solve anagrams",
+  "repository": "https://github.com/iainlane/anagram.ninja.git",
+  "author": "Iain Lane <iain@orangesquash.org.uk>",
+  "license": "AGPL-3",
+  "private": true,
+  "dependencies": {
+    "two.js": "^0.7.0-stable.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
