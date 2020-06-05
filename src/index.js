@@ -1,23 +1,33 @@
 import Two from 'two.js';
 
-// Make an instance of two and place it on the page.
-var elem = document.body
-var params = { width: 285, height: 200 };
-var two = new Two(params).appendTo(elem);
+function setCircleSize(circle) {
+    circle.width = two.width / 2
+    circle.height = two.height / 2
+    circle.radius = (Math.min(two.width, two.height) * 0.75) / 2;
+    circle.translation.set(circle.width, circle.height);
+}
 
-// two has convenience methods to create shapes.
-var circle = two.makeCircle(72, 100, 50);
-var rect = two.makeRectangle(213, 100, 100, 100);
+var text = 'this is a test anagram';
 
-// The object returned has many stylable properties:
-circle.fill = '#FF8000';
-circle.stroke = 'orangered'; // Accepts all valid css color
+var two = new Two({fullscreen: true}).appendTo(document.body);
+
+var circle = two.makeCircle();
+setCircleSize(circle);
+
+var twoText = two.makeText(text, 0, 0, {alignment: 'left'});
+
+two.update();
+
+twoText._renderer.elem.innerHTML = [
+    '<textPath xlink:href="#', circle.id, '">', twoText.value, '</textPath>'
+].join('');
+
+circle.stroke = 'green';
 circle.linewidth = 5;
 
-rect.fill = 'rgb(0, 200, 255)';
-rect.opacity = 0.75;
-rect.noStroke();
+window.addEventListener("resize", function(event) {
+    setCircleSize(circle);
+    two.update();
+});
 
-// Don't forget to tell two to render everything
-// to the screen
 two.update();
