@@ -35,7 +35,7 @@ twoText._renderer.elem.innerHTML = [
     '<textPath xlink:href="#', circle.id, '">', twoText.value, '</textPath>'
 ].join('');
 
-circle.stroke = 'green';
+circle.stroke = 'pink';
 circle.linewidth = 5;
 
 window.addEventListener("resize", function(event) {
